@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Littera Island - Documentação Completa do Projeto</title>
+    <title>Portfólio - Littera Island</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -119,17 +119,6 @@
         .emoji {
             font-size: 1.2em;
         }
-        .convention-box {
-            background-color: #4a3c2e;
-            border: 1px solid #6b5b4a;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        .convention-box h4 {
-            margin-top: 0;
-            color: #ffb74d;
-        }
         p {
             color: #e0e0e0;
         }
@@ -139,6 +128,45 @@
         ul, ol {
             color: #e0e0e0;
         }
+        /* New styles for Portfolio */
+        .portfolio-section {
+            margin-top: 40px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .project-card {
+            background-color: #424242;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+            border: 1px solid #555;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card-content {
+            padding: 20px;
+        }
+        .project-card-content h3 {
+            margin-top: 0;
+            color: #4fc3f7;
+        }
+        .project-card-content p {
+            font-size: 0.95em;
+            color: #cccccc;
+        }
+        .project-card-content ul {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 0.9em;
+            color: #d4d4d4;
+        }
+
         @media print {
             body {
                 background-color: white;
@@ -153,7 +181,7 @@
             h1, h2, h3, h4 {
                 color: black;
             }
-            .toc, .feature-list, .system-card, .method-signature, .convention-box {
+            .toc, .feature-list, .system-card, .method-signature, .project-card {
                 background-color: #f5f5f5;
                 border: 1px solid #ddd;
                 color: black;
@@ -163,28 +191,75 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎮 Littera Island - Documentação Completa do Projeto</h1>
+        <h1>🎮 Projeto Littera Island</h1>
         
         <div class="toc">
             <h2>📋 Índice</h2>
             <ul>
-                <li><a href="#visao-geral">1. Visão Geral</a></li>
-                <li><a href="#estrutura-projeto">2. Estrutura do Projeto</a></li>
+                <li><a href="#littera-island-destaques">1. Destaques</a></li>
+                <li><a href="#visao-geral">2. Visão Geral do Projeto</a></li>
                 <li><a href="#sistema-inventario">3. Sistema de Inventário</a></li>
                 <li><a href="#sistema-jogador">4. Sistema do Jogador</a></li>
                 <li><a href="#interface-usuario">5. Interface do Usuário</a></li>
                 <li><a href="#sistema-relacionamentos">6. Sistema de Relacionamentos</a></li>
                 <li><a href="#sistema-tempo">7. Sistema de Tempo</a></li>
                 <li><a href="#outros-sistemas">8. Outros Sistemas</a></li>
-                <li><a href="#convencoes-codigo">9. Convenções de Código</a></li>
             </ul>
         </div>
 
-        <h2 id="visao-geral">🎮 Visão Geral</h2>
+        <h2 id="littera-island-destaques">🌟 Littera Island - Destaques</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3>Sistema de Inventário e Crafting</h3>
+                    <p>Desenvolvimento completo do sistema de inventário, incluindo gerenciamento de slots, empilhamento de itens, coleta automática, e interface de arrastar e soltar. Implementei também o sistema de crafting com receitas dinâmicas.</p>
+                    <ul>
+                        <li>Gerenciamento de slots e stacks.</li>
+                        <li>Coleta automática e drag & drop.</li>
+                        <li>Interface de crafting intuitiva.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3>Ciclo Dia/Noite e Estações</h3>
+                    <p>Criação do sistema de tempo dinâmico, simulando o ciclo dia/noite com rotação do sol e variação de iluminação. Inclui transição de estações do ano e música ambiente adaptativa.</p>
+                    <ul>
+                        <li>Transições suaves dia/noite.</li>
+                        <li>Quatro estações com impactos visuais.</li>
+                        <li>Música contextualizada.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3>Sistema de Relacionamentos com NPCs</h3>
+                    <p>Desenvolvimento do sistema de relacionamento com NPCs, permitindo ao jogador interagir, dar presentes e aumentar níveis de amizade que desbloqueiam novas interações e diálogos.</p>
+                    <ul>
+                        <li>Progressão de amizade com NPCs.</li>
+                        <li>Sistema de diálogo paginado.</li>
+                        <li>Desbloqueio de eventos por relacionamento.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3>Interface do Usuário e Notificações</h3>
+                    <p>Criação e gerenciamento da interface do usuário (UI), incluindo um sistema de notificações dinâmicas para feedback ao jogador, com bolhas para itens coletados e fila de mensagens.</p>
+                    <ul>
+                        <li>Notificações configuráveis.</li>
+                        <li>Bolhas de item animadas.</li>
+                        <li>Priorização de mensagens UI.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="visao-geral">🎮 Visão Geral do Projeto</h2>
         <p><strong>Littera Island</strong> é um jogo de simulação de vida em ilhas desenvolvido em Unity. O projeto implementa diversos sistemas interconectados que permitem ao jogador explorar, coletar recursos, construir, interagir com NPCs e gerenciar seu próprio mundo.</p>
 
         <div class="feature-list">
-            <h3>Características Principais:</h3>
+            <h3>Características Principais do Projeto:</h3>
             <ul>
                 <li><strong>Sistema de Inventário</strong> com drag & drop</li>
                 <li><strong>Coleta de Recursos</strong> com ferramentas específicas</li>
@@ -196,45 +271,7 @@
                 <li><strong>Ranking de Ilha</strong> baseado em ações</li>
             </ul>
         </div>
-
-        <h2 id="estrutura-projeto">📁 Estrutura do Projeto</h2>
-        <p>O projeto está organizado em pastas temáticas dentro de <code>Assets/Scripts/</code>:</p>
-
-        <div class="system-overview">
-            <div class="system-card">
-                <h4>🎒 Inventario/</h4>
-                <p>Sistema de inventário e crafting</p>
-            </div>
-            <div class="system-card">
-                <h4>🎮 Player/</h4>
-                <p>Controle do jogador e mecânicas</p>
-            </div>
-            <div class="system-card">
-                <h4>🖥️ UI/</h4>
-                <p>Interface do usuário</p>
-            </div>
-            <div class="system-card">
-                <h4>👥 Relacionamento/</h4>
-                <p>Sistema de NPCs e relacionamentos</p>
-            </div>
-            <div class="system-card">
-                <h4>⏰ Day and Night/</h4>
-                <p>Sistema de tempo e sono</p>
-            </div>
-            <div class="system-card">
-                <h4>📅 Calendario/</h4>
-                <p>Sistema de calendário e eventos</p>
-            </div>
-            <div class="system-card">
-                <h4>🎯 Coleta/</h4>
-                <p>Sistema de coleta de recursos</p>
-            </div>
-            <div class="system-card">
-                <h4>📦 Scriptable Objects/</h4>
-                <p>Dados de itens, receitas e eventos</p>
-            </div>
-        </div>
-
+        
         <h2 id="sistema-inventario">🎒 Sistema de Inventário</h2>
 
         <h3>Mochila.cs</h3>
@@ -250,23 +287,7 @@
                 <li>Verificação de existência e quantidade de itens</li>
             </ul>
         </div>
-
-        <h4>Métodos Principais:</h4>
-        <div class="method-signature">
-            Adiciona um item ao inventário, priorizando stacks existentes<br>
-            public bool AdicionarItem(ItemInstancia item)
-        </div>
-
-        <div class="method-signature">
-            Remove uma quantidade específica de um item do inventário<br>
-            public void RemoverItem(ItemDados itemARemover, int quantidadeARemover)
-        </div>
-
-        <div class="method-signature">
-            Verifica se um item existe no inventário<br>
-            public bool ChecarExistenciaDeItem(ItemDados itemAChecar)
-        </div>
-
+        
         <h3>HotbarControlador.cs</h3>
         <p><strong>Propósito:</strong> Controla a barra de ferramentas do jogador</p>
 
@@ -390,62 +411,10 @@
             </div>
         </div>
 
-        <h2 id="convencoes-codigo">📝 Convenções de Código</h2>
-
-        <div class="convention-box">
-            <h4>Estrutura de Arquivos</h4>
-            <p>Todos os scripts seguem uma estrutura padronizada com regiões organizadas:</p>
-            <ul>
-                <li><strong>Configurações:</strong> Parâmetros configuráveis</li>
-                <li><strong>Componentes:</strong> Referências a objetos Unity</li>
-                <li><strong>Estados:</strong> Variáveis de estado da classe</li>
-                <li><strong>Unity Lifecycle:</strong> Métodos do ciclo de vida do Unity</li>
-                <li><strong>Funcionalidades:</strong> Métodos específicos da classe</li>
-            </ul>
-        </div>
-
-        <div class="convention-box">
-            <h4>Documentação XML</h4>
-            <ul>
-                <li><strong>Classes:</strong> Descrição do propósito geral</li>
-                <li><strong>Métodos Públicos:</strong> Descrição da funcionalidade e parâmetros</li>
-                <li><strong>Propriedades Complexas:</strong> Explicação do comportamento</li>
-            </ul>
-        </div>
-
-        <div class="convention-box">
-            <h4>Nomenclatura</h4>
-            <ul>
-                <li><strong>Classes:</strong> PascalCase (ex: <code>GerenciadorDeTempo</code>)</li>
-                <li><strong>Métodos:</strong> PascalCase (ex: <code>AdicionarItem</code>)</li>
-                <li><strong>Variáveis:</strong> camelCase (ex: <code>tempoAtual</code>)</li>
-                <li><strong>Constantes:</strong> UPPER_CASE (ex: <code>MAX_ITEMS</code>)</li>
-            </ul>
-        </div>
-
-        <h3>🔧 Como Contribuir</h3>
-
-        <h4>Adicionando Novos Scripts</h4>
-        <ol>
-            <li>Escolha a pasta apropriada baseada na funcionalidade</li>
-            <li>Siga as convenções de nomenclatura</li>
-            <li>Adicione documentação XML completa</li>
-            <li>Organize o código em regiões lógicas</li>
-            <li>Teste a integração com sistemas existentes</li>
-        </ol>
-
-        <h4>Modificando Scripts Existentes</h4>
-        <ol>
-            <li>Mantenha a documentação XML atualizada</li>
-            <li>Preserve a estrutura de regiões</li>
-            <li>Adicione comentários para lógica complexa</li>
-            <li>Teste as funcionalidades relacionadas</li>
-        </ol>
-
         <hr>
         <p style="text-align: center; color: #9e9e9e; font-style: italic;">
-            Documentação gerada em 2025 - Samambaia Games
+            Fernando Souza - 2025
         </p>
     </div>
 </body>
-</html> 
+</html>
