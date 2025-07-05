@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Littera Island</title>
+    <!-- Google Fonts - Orbitron para visual cyberpunk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#destaques">Destaques</a></li>
+            <li><a href="#sistemas">Sistemas</a></li>
+            <li><a href="#tecnologias">Outras Mecânicas</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="destaques">
+            <h1>🌟 Destaques do Projeto</h1>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>🎒 Sistema de Inventário e Crafting</h3>
+                    <p class="project-type">Gerenciamento Completo de Itens</p>
+                    <p class="project-description">
+                        Desenvolvimento completo do sistema de inventário, incluindo gerenciamento de slots, empilhamento de itens, coleta automática, e interface de arrastar e soltar. Implementei também o sistema de crafting com receitas dinâmicas.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Slots Dinâmicos</span>
+                        <span class="feature-tag">Drag & Drop</span>
+                        <span class="feature-tag">Crafting</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>⏰ Ciclo Dia/Noite e Estações</h3>
+                    <p class="project-type">Sistema de Tempo Dinâmico</p>
+                    <p class="project-description">
+                        Criação do sistema de tempo dinâmico, simulando o ciclo dia/noite com rotação do sol e variação de iluminação. Inclui transição de estações do ano e música ambiente adaptativa.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Ciclo Realista</span>
+                        <span class="feature-tag">4 Estações</span>
+                        <span class="feature-tag">Música Adaptativa</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>👥 Sistema de Relacionamentos</h3>
+                    <p class="project-type">Interação com NPCs</p>
+                    <p class="project-description">
+                        Desenvolvimento do sistema de relacionamento com NPCs, permitindo ao jogador interagir, dar presentes e aumentar níveis de amizade que desbloqueiam novas interações e diálogos.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Níveis de Amizade</span>
+                        <span class="feature-tag">Diálogos Paginados</span>
+                        <span class="feature-tag">Eventos Especiais</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>🖥️ Interface e Notificações</h3>
+                    <p class="project-type">UI/UX Dinâmica</p>
+                    <p class="project-description">
+                        Criação e gerenciamento da interface do usuário (UI), incluindo um sistema de notificações dinâmicas para feedback ao jogador, com bolhas para itens coletados e fila de mensagens.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Notificações</span>
+                        <span class="feature-tag">Bolhas Animadas</span>
+                        <span class="feature-tag">Fila de Mensagens</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sistemas">
+            <h1>🎮 Sistemas Principais</h1>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>🎒 Mochila.cs</h3>
+                    <p class="project-type">Sistema de Inventário</p>
+                    <p class="project-description">
+                        Sistema principal de inventário do jogador com gerenciamento de slots, stacks de itens, coleta automática e drag & drop entre slots.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Slots Dinâmicos</span>
+                        <span class="feature-tag">Stacks</span>
+                        <span class="feature-tag">Drag & Drop</li>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>🎮 PlayerController.cs</h3>
+                    <p class="project-type">Controle do Jogador</p>
+                    <p class="project-description">
+                        Controlador principal do jogador com movimento baseado em input, sistema de gravidade, colisão, detecção de solo e controle de animações.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Movimento</span>
+                        <span class="feature-tag">Física</span>
+                        <span class="feature-tag">Animações</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>⏰ GerenciadorDeTempo.cs</h3>
+                    <p class="project-type">Sistema de Tempo</p>
+                    <p class="project-description">
+                        Gerencia o sistema de tempo, dia/noite e temporadas com ciclo realista, rotação do sol, música adaptativa e calendário integrado.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Ciclo Dia/Noite</span>
+                        <span class="feature-tag">Estações</span>
+                        <span class="feature-tag">Música</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>👥 GerenciadorDeRelacionamento.cs</h3>
+                    <p class="project-type">Relacionamentos</p>
+                    <p class="project-description">
+                        Gerencia o sistema de relacionamentos entre jogador e NPCs com pontos de relacionamento, níveis de amizade e desbloqueios baseados em relacionamento.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Pontos de Amizade</span>
+                        <span class="feature-tag">Níveis</span>
+                        <span class="feature-tag">Desbloqueios</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tecnologias">
+            <h1>🎯 Outras Mecânicas</h1>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>🎯 Coletavel.cs</h3>
+                    <p class="project-type">Sistema de Coleta</p>
+                    <p class="project-description">
+                        Sistema de coleta que define itens coletáveis com verificação de ferramentas adequadas e integração com inventário.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Coleta</span>
+                        <span class="feature-tag">Ferramentas</span>
+                        <span class="feature-tag">Integração</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>👁️ FadeObjectBlockingObject.cs</h3>
+                    <p class="project-type">Transparência</p>
+                    <p class="project-description">
+                        Sistema de transparência para objetos que bloqueiam a visão do jogador, melhorando a experiência visual.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Transparência</span>
+                        <span class="feature-tag">Visão</span>
+                        <span class="feature-tag">UX</span>
+                        <span class="feature-tag">Shaders</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>🚢 TeleportSystem.cs</h3>
+                    <p class="project-type">Teletransporte</p>
+                    <p class="project-description">
+                        Sistema de teletransporte entre ilhas permitindo navegação eficiente pelo mundo do jogo.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Teleporte</span>
+                        <span class="feature-tag">Navegação</span>
+                        <span class="feature-tag">Ilhas</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <h3>⭐ GerenciadorDeRankDeIlha.cs</h3>
+                    <p class="project-type">Ranking</p>
+                    <p class="project-description">
+                        Sistema de ranking e pontuação das ilhas baseado nas ações do jogador, criando objetivos e progressão.
+                    </p>
+                    <div class="project-features">
+                        <span class="feature-tag">Ranking</span>
+                        <span class="feature-tag">Pontuação</span>
+                        <span class="feature-tag">Progressão</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <p class="footer-text" style="text-align: center; color: #9e9e9e; font-style: italic;">
+            Fernando Souza - 2025
+        </p>
+    </footer>
+</body>
+</html>

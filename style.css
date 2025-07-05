@@ -1,0 +1,881 @@
+/* Definição de cores principais para o tema escuro com referências a jogos */
+:root {
+    --bg-color: #0a0a0f;
+    --primary-color: #1a1a2e;
+    --accent-color: #00ff88;
+    --accent-secondary: #ff6b35;
+    --text-color: #ffffff;
+    --secondary-text: #cccccc;
+    --card-bg: #16213e;
+    --card-border: #00ff88;
+    --neon-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+    --neon-glow-strong: 0 0 30px rgba(0, 255, 136, 0.6);
+    --focus-outline: 2px solid var(--accent-color);
+    --focus-outline-offset: 2px;
+}
+
+/* Reset básico e fonte moderna */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Melhorar performance de animações */
+* {
+    will-change: auto;
+}
+
+/* Otimizar para dispositivos com preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Background com gradiente cyberpunk */
+body {
+    background: linear-gradient(135deg, var(--bg-color) 0%, #1a1a2e 50%, #16213e 100%);
+    color: var(--text-color);
+    font-family: 'Orbitron', 'Segoe UI', 'Arial', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efeito de partículas no background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Menu de navegação fixo com estilo cyberpunk */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: var(--neon-glow);
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+}
+nav ul li {
+    margin: 0 2rem;
+    position: relative;
+}
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: relative;
+    outline: none;
+}
+
+nav ul li a:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+nav ul li a:hover {
+    color: var(--bg-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+nav ul li a.active {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Espaçamento para compensar o menu fixo */
+section {
+    padding: 6rem 2rem 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+section h1 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px var(--accent-color);
+    position: relative;
+    text-align: center;
+    line-height: 1.2;
+}
+section h1::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+section h3 {
+    color: var(--accent-color);
+    margin: 1.5rem 0 0.8rem 0;
+    font-size: 1.4rem;
+}
+section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+section li {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text);
+}
+
+/* Estilos para o cabeçalho do perfil com estilo cyberpunk */
+.profile-header {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(22, 33, 62, 0.8) 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--neon-glow-strong);
+    position: relative;
+    overflow: hidden;
+}
+.profile-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+}
+@keyframes scan {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+.profile-header h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.profile-header h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.profile-header .location {
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+/* Estilos para educação e experiência com estilo cyberpunk */
+.education-item, .experience-item {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(22, 33, 62, 0.95) 100%);
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    box-shadow: var(--neon-glow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+}
+.education-item::before, .experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+.education-item:hover::before, .experience-item:hover::before {
+    left: 100%;
+}
+.education-item:hover, .experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--neon-glow-strong);
+    border-color: var(--accent-color);
+}
+.education-item h4, .experience-item h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.period {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Estilos para informações de contato */
+.contact-info {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(22, 33, 62, 0.95) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    box-shadow: var(--neon-glow);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+}
+.contact-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-info:hover::before {
+    transform: translateX(100%);
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--neon-glow-strong);
+    border-color: var(--accent-color);
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    outline: none;
+}
+
+.contact-item a:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.contact-item a:hover {
+    color: #00cfa6;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+    transform: translateX(5px);
+}
+
+/* Portfólio em grid com estilo cyberpunk */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    align-items: start;
+}
+.portfolio-grid > div {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(22, 33, 62, 0.95) 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    box-shadow: var(--neon-glow);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+}
+
+.featured-project {
+    padding-top: 3rem;
+    overflow: visible;
+    margin-top: 1rem;
+}
+.portfolio-grid > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+.portfolio-grid > div:hover::before {
+    transform: translateX(100%);
+}
+.portfolio-grid > div:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--neon-glow-strong);
+    border-color: var(--accent-color);
+}
+
+/* Estilos específicos para os itens do portfólio */
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+/* Projeto em destaque - Layout horizontal */
+.featured-project {
+    grid-column: 1 / -1;
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--neon-glow);
+    background: var(--card-bg);
+    margin: 2rem 0 4rem 0;
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+}
+
+
+
+.featured-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 2;
+    transform: translateZ(0);
+}
+
+
+
+@keyframes lightPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+
+
+.featured-project:hover {
+    box-shadow: var(--neon-glow-strong);
+    transform: translateY(-3px);
+    transition: all 0.4s ease;
+}
+
+
+
+.featured-info {
+    flex: 2;
+}
+
+.featured-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+
+
+.portfolio-item h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--accent-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+    max-width: 100%;
+    transform: translateZ(0);
+    position: relative;
+    z-index: 2;
+}
+
+.project-type {
+    color: var(--accent-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    transform: translateZ(0);
+    position: relative;
+    z-index: 2;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+    background: linear-gradient(45deg, var(--accent-color), rgba(0, 255, 136, 0.3));
+    color: var(--bg-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.feature-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(45deg, var(--accent-color), #00cfa6);
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    min-height: 44px;
+}
+
+.project-link:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-link:hover::before {
+    left: 100%;
+}
+
+.project-link:hover {
+    background: linear-gradient(45deg, #00cfa6, var(--accent-color));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+}
+
+.link-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover .link-arrow {
+    transform: translateX(5px);
+}
+
+/* Container para os links do projeto */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.project-link {
+    flex: 1;
+    min-width: 200px;
+}
+
+.itch-link {
+    background: linear-gradient(45deg, var(--accent-secondary), #ff8c42);
+}
+
+.itch-link:hover {
+    background: linear-gradient(45deg, #ff8c42, var(--accent-secondary));
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+}
+
+.download-link {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+}
+
+.download-link:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Formulário de contato estilizado com tema cyberpunk */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(22, 33, 62, 0.95) 100%);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--neon-glow-strong);
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.05), transparent);
+    animation: scan 4s linear infinite;
+    pointer-events: none;
+}
+form label {
+    color: var(--secondary-text);
+    font-size: 1rem;
+}
+form input, form textarea {
+    background: rgba(26, 26, 46, 0.9);
+    color: var(--text-color);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    resize: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+form input:focus, form textarea:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+    transform: none;
+    backdrop-filter: none;
+    filter: none;
+}
+form button {
+    background: linear-gradient(45deg, var(--accent-color), #00cfa6);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    min-height: 44px;
+}
+
+form button:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+form button:hover::before {
+    left: 100%;
+}
+form button:hover {
+    background: linear-gradient(45deg, #00cfa6, var(--accent-color));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Modal de feedback */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    margin: 20vh auto;
+    padding: 2rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: var(--neon-glow-strong);
+    text-align: center;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close {
+    color: var(--accent-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    background: none;
+    border: none;
+    outline: none;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close:focus {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.close:hover {
+    color: var(--accent-secondary);
+}
+
+#modalMessage {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.success-message {
+    color: #00ff88;
+}
+
+.error-message {
+    color: #ff4444;
+}
+
+/* Botão de loading */
+button.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--bg-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    section {
+        padding: 5rem 1rem 2rem 1rem;
+    }
+    
+    section h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    .featured-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .featured-info {
+        flex: 1;
+    }
+    
+    .featured-links {
+        flex: 1;
+        min-width: auto;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10vh auto;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    nav ul li {
+        margin: 0 0.3rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    section {
+        padding: 4rem 0.5rem 1.5rem 0.5rem;
+    }
+    
+    section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-header {
+        padding: 1.5rem;
+    }
+    
+    .profile-header h2 {
+        font-size: 1.5rem;
+    }
+} 

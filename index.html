@@ -1,420 +1,224 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Littera Island</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #2d2d2d;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            border: 1px solid #404040;
-        }
-        h1 {
-            color: #4fc3f7;
-            border-bottom: 3px solid #4fc3f7;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-        h2 {
-            color: #81c784;
-            border-left: 4px solid #81c784;
-            padding-left: 15px;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #ffb74d;
-            margin-top: 25px;
-        }
-        h4 {
-            color: #ba68c8;
-        }
-        .toc {
-            background-color: #3d3d3d;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border: 1px solid #555;
-        }
-        .toc ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .toc li {
-            margin: 8px 0;
-        }
-        .toc a {
-            text-decoration: none;
-            color: #64b5f6;
-            font-weight: 500;
-        }
-        .toc a:hover {
-            text-decoration: underline;
-            color: #90caf9;
-        }
-        code {
-            background-color: #424242;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            color: #ff8a80;
-            border: 1px solid #555;
-        }
-        pre {
-            background-color: #1e1e1e;
-            color: #d4d4d4;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            border: 1px solid #404040;
-        }
-        .method-signature {
-            background-color: #424242;
-            border-left: 4px solid #4caf50;
-            padding: 10px;
-            margin: 10px 0;
-            font-family: 'Courier New', monospace;
-            border: 1px solid #555;
-        }
-        .feature-list {
-            background-color: #2e4a2e;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border: 1px solid #4a6b4a;
-        }
-        .feature-list ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-        .system-overview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .system-card {
-            background-color: #424242;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #4fc3f7;
-            border: 1px solid #555;
-        }
-        .system-card h4 {
-            margin-top: 0;
-            color: #4fc3f7;
-        }
-        .emoji {
-            font-size: 1.2em;
-        }
-        p {
-            color: #e0e0e0;
-        }
-        strong {
-            color: #ffb74d;
-        }
-        ul, ol {
-            color: #e0e0e0;
-        }
-        /* New styles for Portfolio */
-        .portfolio-section {
-            margin-top: 40px;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .project-card {
-            background-color: #424242;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-            border: 1px solid #555;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-card-content {
-            padding: 20px;
-        }
-        .project-card-content h3 {
-            margin-top: 0;
-            color: #4fc3f7;
-        }
-        .project-card-content p {
-            font-size: 0.95em;
-            color: #cccccc;
-        }
-        .project-card-content ul {
-            list-style: disc;
-            padding-left: 20px;
-            font-size: 0.9em;
-            color: #d4d4d4;
-        }
-
-        @media print {
-            body {
-                background-color: white;
-                color: black;
-            }
-            .container {
-                box-shadow: none;
-                padding: 20px;
-                background-color: white;
-                border: none;
-            }
-            h1, h2, h3, h4 {
-                color: black;
-            }
-            .toc, .feature-list, .system-card, .method-signature, .project-card {
-                background-color: #f5f5f5;
-                border: 1px solid #ddd;
-                color: black;
-            }
-        }
-    </style>
+    <meta name="description" content="Portfólio de Fernando Souza - Game Programmer e Game Designer na Samambaia Games. Especialista em Unity, C# e desenvolvimento de mecânicas de jogos.">
+    <meta name="keywords" content="game developer, unity, c#, jogos digitais, programação de jogos, samambaia games">
+    <meta name="author" content="Fernando Souza">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Portfólio de Jogos - Fernando Souza">
+    <meta property="og:description" content="Game Programmer e Game Designer especialista em Unity e C#">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seu-dominio.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Portfólio de Jogos - Fernando Souza | Game Developer</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    <!-- Google Fonts - Orbitron para visual cyberpunk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js" defer></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>🎮 Projeto Littera Island</h1>
+    <!-- Menu de navegação fixo no topo -->
+    <nav role="navigation" aria-label="Menu principal">
+        <ul>
+            <li><a href="#sobre" aria-label="Ir para seção Sobre mim">Sobre mim</a></li>
+            <li><a href="#formacao" aria-label="Ir para seção Formação e Idiomas">Formação & Idiomas</a></li>
+            <li><a href="#portfolio" aria-label="Ir para seção Portfólio">Portfólio</a></li>
+            <li><a href="#contato" aria-label="Ir para seção Contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção Sobre mim -->
+    <section id="sobre">
+        <h1>Sobre mim</h1>
+        <div class="profile-header">
+            <h2>Fernando Souza</h2>
+            <h3>Game Programmer | Game Designer @ Samambaia Games</h3>
+            <p class="location">Itabaiana, Sergipe, Brasil</p>
+        </div>
+        <p>Sou um desenvolvedor de jogos apaixonado por criar experiências interativas únicas. Com experiência sólida em Unity e formação em Tecnologia em Jogos Digitais, atuo como desenvolvedor generalista, dominando múltiplas facetas do desenvolvimento: desde a programação de sistemas complexos até o design de mecânicas inovadoras.</p>
+        <p>Minha especialidade está em desenvolver mecânicas profundas e engajantes que elevam a experiência do jogador. Acredito que cada sistema deve contribuir para a imersão e diversão, criando momentos memoráveis através de interações bem pensadas e implementadas com excelência técnica.</p>
+        <p>Atualmente, lidero o desenvolvimento do Littera Island na Samambaia Games, onde aplico minha visão de criar jogos que não apenas entretêm, mas também inspiram e conectam pessoas através de experiências significativas.</p>
+    </section>
+
+    <!-- Seção Formação e Idiomas -->
+    <section id="formacao">
+        <h1>Formação & Idiomas</h1>
         
-        <div class="toc">
-            <h2>📋 Índice</h2>
-            <ul>
-                <li><a href="#littera-island-destaques">1. Destaques</a></li>
-                <li><a href="#visao-geral">2. Visão Geral do Projeto</a></li>
-                <li><a href="#sistema-inventario">3. Sistema de Inventário</a></li>
-                <li><a href="#sistema-jogador">4. Sistema do Jogador</a></li>
-                <li><a href="#interface-usuario">5. Interface do Usuário</a></li>
-                <li><a href="#sistema-relacionamentos">6. Sistema de Relacionamentos</a></li>
-                <li><a href="#sistema-tempo">7. Sistema de Tempo</a></li>
-                <li><a href="#outros-sistemas">8. Outros Sistemas</a></li>
-            </ul>
+        <h3>Formação Acadêmica</h3>
+        <div class="education-item">
+            <h4>UNINTER Centro Universitário Internacional</h4>
+            <p>Curso Superior de Tecnologia (CST), Jogos Digitais</p>
+            <p class="period">Agosto de 2023 - Janeiro de 2026</p>
+        </div>
+        
+        <div class="education-item">
+            <h4>Universidade Federal de Sergipe</h4>
+            <p>Bacharelado, Sistemas de Informação</p>
+            <p class="period">Outubro de 2020 - Agosto de 2023 (Trancado)</p>
         </div>
 
-        <h2 id="littera-island-destaques">🌟 Littera Island - Destaques</h2>
+        <h3>Experiência Profissional</h3>
+        <div class="experience-item">
+            <h4>Samambaia Studio</h4>
+            <p>Programação de jogos eletrônicos</p>
+            <p class="period">Setembro de 2024 - Presente (11 meses)</p>
+            <p class="location">Brasil</p>
+        </div>
+
+        <h3>Idiomas</h3>
+        <ul>
+            <li><strong>Português:</strong> Nativo</li>
+            <li><strong>Inglês:</strong> Fluente</li>
+        </ul>
+
+        <h3>Principais Competências</h3>
+        <ul>
+            <li>Metodologias Agile</li>
+            <li>Scrum</li>
+            <li>Programação de jogos eletrônicos</li>
+            <li>Unity Engine</li>
+            <li>Design de mecânicas</li>
+            <li>Integração de gráficos e interface</li>
+        </ul>
+    </section>
+
+    <!-- Seção Portfólio -->
+    <section id="portfolio">
+        <h1>Portfólio</h1>
         <div class="portfolio-grid">
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Sistema de Inventário e Crafting</h3>
-                    <p>Desenvolvimento completo do sistema de inventário, incluindo gerenciamento de slots, empilhamento de itens, coleta automática, e interface de arrastar e soltar. Implementei também o sistema de crafting com receitas dinâmicas.</p>
-                    <ul>
-                        <li>Gerenciamento de slots e stacks.</li>
-                        <li>Coleta automática e drag & drop.</li>
-                        <li>Interface de crafting intuitiva.</li>
-                    </ul>
+            <div class="portfolio-item featured-project">
+                <div class="featured-content">
+                    <div class="featured-info">
+                        <h3>🎮 Littera Island</h3>
+                        <p class="project-type">Jogo de Simulação de Vida</p>
+                        <p class="project-description">
+                            Projeto completo desenvolvido em Unity com sistemas interconectados: inventário com drag & drop, 
+                            sistema de relacionamentos com NPCs, ciclo dia/noite dinâmico, crafting e muito mais. 
+                            Atualmente em desenvolvimento na Samambaia Games como Lead Programmer.
+                        </p>
+                                        <div class="project-features">
+                    <span class="feature-tag">Unity</span>
+                    <span class="feature-tag">C#</span>
+                    <span class="feature-tag">Sistemas</span>
+                    <span class="feature-tag">UI/UX</span>
+                    <span class="feature-tag">Mobile</span>
+                    <span class="feature-tag">Lead Dev</span>
+                </div>
+                    </div>
+                    <div class="featured-links">
+                        <a href="Documentacao Littera Island.html" target="_blank" class="project-link" rel="noopener noreferrer" aria-label="Abrir documentação do Littera Island em nova aba">
+                            <span>Ver Documentação</span>
+                            <span class="link-arrow" aria-hidden="true">→</span>
+                        </a>
+                        <a href="https://nandosouzas.itch.io/ailha" target="_blank" class="project-link itch-link" rel="noopener noreferrer" aria-label="Jogar Littera Island no Itch.io em nova aba">
+                            <span>Jogar no Itch.io</span>
+                            <span class="link-arrow" aria-hidden="true">→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Ciclo Dia/Noite e Estações</h3>
-                    <p>Criação do sistema de tempo dinâmico, simulando o ciclo dia/noite com rotação do sol e variação de iluminação. Inclui transição de estações do ano e música ambiente adaptativa.</p>
-                    <ul>
-                        <li>Transições suaves dia/noite.</li>
-                        <li>Quatro estações com impactos visuais.</li>
-                        <li>Música contextualizada.</li>
-                    </ul>
+            
+            <div class="portfolio-item">
+                <h3>🐸 Frog's Road</h3>
+                <p class="project-type">Infinite Runner / Platformer</p>
+                <p class="project-description">
+                    Projeto desafio desenvolvido em uma semana para faculdade. Jogo de plataforma com mecânicas 
+                    de infinite runner, desenvolvido do zero incluindo arte, sistemas e publicação.
+                </p>
+                <div class="project-features">
+                    <span class="feature-tag">Unity</span>
+                    <span class="feature-tag">C#</span>
+                    <span class="feature-tag">Mobile</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://nandosouzas.itch.io/frogs-road" target="_blank" class="project-link" rel="noopener noreferrer" aria-label="Jogar Frog's Road no Itch.io em nova aba">
+                        <span>Jogar no Itch.io</span>
+                        <span class="link-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="https://nandosouzas.itch.io/frogs-road" class="project-link download-link" rel="noopener noreferrer" aria-label="Download do APK do Frog's Road">
+                        <span>Download APK</span>
+                        <span class="link-arrow" aria-hidden="true">↓</span>
+                    </a>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Sistema de Relacionamentos com NPCs</h3>
-                    <p>Desenvolvimento do sistema de relacionamento com NPCs, permitindo ao jogador interagir, dar presentes e aumentar níveis de amizade que desbloqueiam novas interações e diálogos.</p>
-                    <ul>
-                        <li>Progressão de amizade com NPCs.</li>
-                        <li>Sistema de diálogo paginado.</li>
-                        <li>Desbloqueio de eventos por relacionamento.</li>
-                    </ul>
+            
+            <div class="portfolio-item">
+                <h3>🚀 Flappy Blitz</h3>
+                <p class="project-type">Arcade / Protótipo</p>
+                <p class="project-description">
+                    Protótipo inspirado em Flappy Bird, onde o jogador controla um tanque que atravessa barricadas 
+                    de sacos de areia. Projeto de aprendizado desenvolvido em Unity.
+                </p>
+                <div class="project-features">
+                    <span class="feature-tag">Unity</span>
+                    <span class="feature-tag">C#</span>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-card-content">
-                    <h3>Interface do Usuário e Notificações</h3>
-                    <p>Criação e gerenciamento da interface do usuário (UI), incluindo um sistema de notificações dinâmicas para feedback ao jogador, com bolhas para itens coletados e fila de mensagens.</p>
-                    <ul>
-                        <li>Notificações configuráveis.</li>
-                        <li>Bolhas de item animadas.</li>
-                        <li>Priorização de mensagens UI.</li>
-                    </ul>
+                <div class="project-links">
+                    <a href="https://nandosouzas.itch.io/flappy-blitz" target="_blank" class="project-link" rel="noopener noreferrer" aria-label="Jogar Flappy Blitz no Itch.io em nova aba">
+                        <span>Jogar no Itch.io</span>
+                        <span class="link-arrow" aria-hidden="true">→</span>
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <h2 id="visao-geral">🎮 Visão Geral do Projeto</h2>
-        <p><strong>Littera Island</strong> é um jogo de simulação de vida em ilhas desenvolvido em Unity. O projeto implementa diversos sistemas interconectados que permitem ao jogador explorar, coletar recursos, construir, interagir com NPCs e gerenciar seu próprio mundo.</p>
-
-        <div class="feature-list">
-            <h3>Características Principais do Projeto:</h3>
-            <ul>
-                <li><strong>Sistema de Inventário</strong> com drag & drop</li>
-                <li><strong>Coleta de Recursos</strong> com ferramentas específicas</li>
-                <li><strong>Sistema de Crafting</strong> com receitas</li>
-                <li><strong>Relacionamentos com NPCs</strong> com níveis de amizade</li>
-                <li><strong>Ciclo Dia/Noite</strong> com temporadas</li>
-                <li><strong>Sistema de Sono</strong> e cansaço</li>
-                <li><strong>Teletransporte</strong> entre ilhas</li>
-                <li><strong>Ranking de Ilha</strong> baseado em ações</li>
-            </ul>
-        </div>
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h1>Contato</h1>
         
-        <h2 id="sistema-inventario">🎒 Sistema de Inventário</h2>
-
-        <h3>Mochila.cs</h3>
-        <p><strong>Propósito:</strong> Sistema principal de inventário do jogador</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades Principais:</h4>
-            <ul>
-                <li>Gerenciamento de slots de inventário</li>
-                <li>Sistema de stacks de itens</li>
-                <li>Coleta automática de itens do chão</li>
-                <li>Drag & drop entre slots</li>
-                <li>Verificação de existência e quantidade de itens</li>
-            </ul>
-        </div>
-        
-        <h3>HotbarControlador.cs</h3>
-        <p><strong>Propósito:</strong> Controla a barra de ferramentas do jogador</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades:</h4>
-            <ul>
-                <li>Seleção de ferramentas ativas</li>
-                <li>Atualização visual da hotbar</li>
-                <li>Integração com sistema de coleta</li>
-            </ul>
-        </div>
-
-        <h2 id="sistema-jogador">🎮 Sistema do Jogador</h2>
-
-        <h3>PlayerController.cs</h3>
-        <p><strong>Propósito:</strong> Controlador principal do jogador</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades Principais:</h4>
-            <ul>
-                <li>Movimento baseado em input</li>
-                <li>Sistema de gravidade e colisão</li>
-                <li>Detecção de tipo de solo</li>
-                <li>Controle de animações</li>
-                <li>Sistema de áudio de passos</li>
-            </ul>
-        </div>
-
-        <h3>ControladorDeColeta.cs</h3>
-        <p><strong>Propósito:</strong> Sistema de coleta de recursos</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades:</h4>
-            <ul>
-                <li>Verificação de ferramentas adequadas</li>
-                <li>Coleta baseada em tempo</li>
-                <li>Animações de coleta</li>
-                <li>Integração com inventário</li>
-            </ul>
-        </div>
-
-        <h2 id="interface-usuario">🖥️ Interface do Usuário</h2>
-
-        <h3>GerenciadorDeNotificacoes.cs</h3>
-        <p><strong>Propósito:</strong> Sistema de notificações para o jogador</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades:</h4>
-            <ul>
-                <li>Notificações textuais com fila</li>
-                <li>Bolhas de notificação para itens coletados</li>
-                <li>Animações de entrada/saída</li>
-                <li>Sistema de priorização</li>
-            </ul>
-        </div>
-
-        <h2 id="sistema-relacionamentos">👥 Sistema de Relacionamentos</h2>
-
-        <h3>GerenciadorDeRelacionamento.cs</h3>
-        <p><strong>Propósito:</strong> Gerencia o sistema de relacionamentos entre jogador e NPCs</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades:</h4>
-            <ul>
-                <li>Sistema de pontos de relacionamento</li>
-                <li>Níveis de amizade (Desconhecido, Colega, Amigo, Melhor Amigo)</li>
-                <li>Presentes e conversas diárias</li>
-                <li>Desbloqueios baseados em relacionamento</li>
-                <li>Sistema de diálogos paginados</li>
-            </ul>
-        </div>
-
-        <h2 id="sistema-tempo">⏰ Sistema de Tempo</h2>
-
-        <h3>GerenciadorDeTempo.cs</h3>
-        <p><strong>Propósito:</strong> Gerencia o sistema de tempo, dia/noite e temporadas</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades:</h4>
-            <ul>
-                <li>Ciclo dia/noite realista</li>
-                <li>Sistema de temporadas (Primavera, Verão, Outono, Inverno)</li>
-                <li>Rotação do sol e configuração de iluminação</li>
-                <li>Música adaptativa (dia/noite)</li>
-                <li>Calendário integrado</li>
-            </ul>
-        </div>
-
-        <h3>GerenciadorDeSono.cs</h3>
-        <p><strong>Propósito:</strong> Sistema de sono e cansaço do jogador</p>
-
-        <div class="feature-list">
-            <h4>Funcionalidades:</h4>
-            <ul>
-                <li>Horários de cansaço configuráveis</li>
-                <li>Sono forçado após horário limite</li>
-                <li>Respawn automático se dormir no relento</li>
-                <li>Integração com sistema de tempo</li>
-                <li>Reset de relacionamentos diários</li>
-            </ul>
-        </div>
-
-        <h2 id="outros-sistemas">🎯 Outros Sistemas</h2>
-
-        <div class="system-overview">
-            <div class="system-card">
-                <h4>🎯 Coletavel.cs</h4>
-                <p>Sistema de coleta que define itens coletáveis</p>
+        <div class="contact-info">
+            <h3>Informações de Contato</h3>
+            <div class="contact-item">
+                <strong>Telefone:</strong> (79) 99866-8430
             </div>
-            <div class="system-card">
-                <h4>👁️ FadeObjectBlockingObject.cs</h4>
-                <p>Sistema de transparência para objetos que bloqueiam a visão</p>
+            <div class="contact-item">
+                <strong>Email:</strong> fernando.souza.ctt@gmail.com
             </div>
-            <div class="system-card">
-                <h4>🚢 TeleportSystem.cs</h4>
-                <p>Sistema de teletransporte entre ilhas</p>
-            </div>
-            <div class="system-card">
-                <h4>⭐ GerenciadorDeRankDeIlha.cs</h4>
-                <p>Sistema de ranking e pontuação das ilhas</p>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/fernandosouza-059323215" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil do LinkedIn em nova aba">
+                    linkedin.com/in/fernandosouza-059323215
+                </a>
             </div>
         </div>
 
+        <form id="contactForm" role="form" aria-label="Formulário de contato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required aria-required="true" placeholder="Digite seu nome completo">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required aria-required="true" placeholder="Digite seu email">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required aria-required="true" placeholder="Digite sua mensagem" rows="5"></textarea>
+
+            <button type="submit" id="submitBtn" aria-label="Enviar mensagem">Enviar</button>
+        </form>
+    </section>
+    
+    <!-- Modal de feedback -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalMessage"></div>
+        </div>
+    </div>
+    <footer>
         <hr>
-        <p style="text-align: center; color: #9e9e9e; font-style: italic;">
+        <p class="footer-text" style="text-align: center; color: #9e9e9e; font-style: italic;">
             Fernando Souza - 2025
         </p>
-    </div>
+    </footer>
 </body>
-</html>
+</html> 
